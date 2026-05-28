@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>🎹 Piano Digital</h1>
+  <div class="note-display">{{ currentNote || 'Presiona una tecla' }}</div>
+
+  <div class="piano-wrapper">
+    <div class="piano">
+      <div
+        *ngFor="let key of whiteKeys"
+        class="key white"
+        [class.pressed]="key.isPressed"
+        (click)="playNote(key)"
+      >
+        {{ key.note }}
+      </div>
+    </div>
+
+    <div class="black-keys-row">
+      <ng-container *ngFor="let key of keys; let i = index">
+        <div
+          *ngIf="key.isBlack"
+          class="key black"
+          [class.pressed]="key.isPressed"
+          [style.left.px]="getBlackKeyPosition(i)"
+          (click)="playNote(key)"
+        ></div>
+      </ng-container>
+    </div>
+  </div>
+</div>
