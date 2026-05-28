@@ -1,6 +1,6 @@
 {
   "appId": "com.piano.app",
   "appName": "PianoApp",
-  "webDir": "dist/browser",
+  "webDir": "dist/demo",
   "bundledWebRuntime": false
 }
